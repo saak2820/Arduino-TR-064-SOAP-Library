@@ -402,6 +402,34 @@ int TR064::state() {
 // ----- Helper-functions -----
 // ----------------------------
 
+/**************************************************************************/
+/*!
+ * @brief converts error code to String
+ * @param error int
+ * @return String
+ */
+/**************************************************************************/
+String HTTPClient::errorToString(int error)
+{
+    switch(error) {
+    //case HTTP_CODE_UNAUTHORIZED:
+    //    return F("user is not authenticated, 401 (Unauthorized) ");unknown action
+    case TR064_CODE_UNKNOWNACTION:
+        return F("unknown or obsolete action.");
+    case TR064_CODE_FALSEARGUMENTS:
+        return F("the number of arguments for an action is not as expected or an unexpected argument is used");
+    case TR064_CODE_ACTIONNOTAUTHORIZED:
+        return F("user is authenticated but has not the needed rights, 606 (Action not authorized)");
+    case TR064_CODE_SECONDFACTORAUTHREQUIRED:
+        return F("action needs 2FA, the status code 866 (second factor authentication required)");
+    case TR064_CODE_SECONDFACTORAUTHBLOCKED:
+        return F("second factor authentication blocked");
+    case TR064_CODE_SECONDFACTORAUTHBUSY:
+        return F("second factorauthentication busy");    
+    default:
+        return String();
+    }
+}
 
 /**************************************************************************/
 /*!
@@ -497,6 +525,8 @@ bool TR064::httpRequest(const String& url, const String& xml, const String& soap
         
         if (httpCode == HTTP_CODE_OK) {
            return true;
+        }else{
+            deb_println("[TR064][httpRequest]<Error> Failed, message: '" + errorToString(httpCode)  + "'", DEBUG_ERROR);  
         }
         
     } else {
