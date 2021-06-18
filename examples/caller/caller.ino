@@ -1,3 +1,4 @@
+#include "arduino_secrets.h"
 /**
  * caller.ino
  *  Oliver-André Urban
@@ -40,23 +41,15 @@
 // Put your router settings here
 //-------------------------------------------------------------------------------------
 
-// Wifi network name (SSID)
-const char* wifi_ssid = "WLANSID"; 
+///////please enter your sensitive data in the Secret tab/arduino_secrets.h
+char wifi_ssid[] = SECRET_WIFI_SSID;
+char wifi_password[] = SECRET_WIFI_PASSWORD;
 
-// Wifi network password
-const char* wifi_password = "XXXXXXXXXXXXXXXXXXXXX";
+char fuser[] = SECRET_FUSER;
+char fpass[] = SECRET_FPASS;
 
-// The username if you created an account, "admin" otherwise
-const char* fuser = "homechecker";
-
-// The password for the aforementioned account.
-const char* fpass = "this_shouldBEaDecentPassword!";
-
-// IP address of your router. This should be "192.168.179.1" for most FRITZ!Boxes
-const char* IP = "192.168.179.1";
-
-// Port of the API of your router. This should be 49000 for all TR-064 devices.
-const int PORT = 49000;
+char IP[] = SECRET_IP;
+int PORT = 49000;
 
 // -------------------------------------------------------------------------------------
 
