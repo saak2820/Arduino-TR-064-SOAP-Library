@@ -409,7 +409,7 @@ int TR064::state() {
  * @return String
  */
 /**************************************************************************/
-String HTTPClient::errorToString(int error)
+String TR064::errorToString(int error)
 {
     switch(error) {
     //case HTTP_CODE_UNAUTHORIZED:
