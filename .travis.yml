@@ -33,14 +33,14 @@ env:
 #    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
  
 before_install:
-   - chmod +x makesecret.sh
+   #- chmod +x makesecret.sh
    - source <(curl -SLs https://raw.githubusercontent.com/adafruit/travis-ci-arduino/master/install.sh)
    
 install:
    - arduino --install-library "ConfigManager"
  
 script:
-   - ./makesecret.sh
+   - make 
    - build_platform esp8266
    - build_platform esp32
  
