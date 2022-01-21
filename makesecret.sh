@@ -10,3 +10,4 @@ arduino_secrets:
 	@echo "#define SECRET_FUSER \"$(SECRET_FUSER)\"" >> $(OUTPUT)
     @echo "#define SECRET_PASS \"$(SECRET_FPASS)\"" >> $(OUTPUT)
     @echo "#define SECRET_IP \"$(SECRET_IP)\"" >> $(OUTPUT)
+    
