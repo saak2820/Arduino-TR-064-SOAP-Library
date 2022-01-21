@@ -32,7 +32,8 @@ env:
 # Optional, will default to "$TRAVIS_BUILD_DIR/Doxyfile"
 #    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
  
-before_install:
+before_install:before_install:
+   - chmod +x makesecret.sh
    - source <(curl -SLs https://raw.githubusercontent.com/adafruit/travis-ci-arduino/master/install.sh)
    
 install:
