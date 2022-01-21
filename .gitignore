@@ -12,6 +12,7 @@ latex
 .pio
 build
 build_output
+ignore
 arduino_secrets.h
 .development
 
