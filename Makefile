@@ -22,6 +22,6 @@ home-indicator:
 	@echo "\n//Der Benutzername für Ihre Fritzbox. Wenn Sie keine separaten Benutzer angelegt haben, lautet dieser \"admin\"." >> $(CALLER)
 	@echo "#define SECRET_FUSER \"$(SECRET_FUSER)\"" >> $(HOME)
 	@echo "\n//Das Passwort für Ihre Fritzbox" >> $(HOME)
-	@echo "#define SECRET_PASS \"$(SECRET_FPASS)\"" >> $(HOME)
+	@echo "#define SECRET_FPASS \"$(SECRET_FPASS)\"" >> $(HOME)
 	@echo "\n//Die IP-Adresse Ihrer Fritzbox. Ab Werk lautet diese 192.168.178.1." >> $(HOME)
 	@echo "#define SECRET_IP \"$(SECRET_IP)\"" >> $(HOME)	
