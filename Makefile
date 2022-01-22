@@ -11,7 +11,7 @@ caller:
 	@echo "\n//Der Benutzername für Ihre Fritzbox. Wenn Sie keine separaten Benutzer angelegt haben, lautet dieser \"admin\"." >> $(CALLER)
 	@echo "#define SECRET_FUSER \"$(SECRET_FUSER)\"" >> $(CALLER)
 	@echo "\n//Das Passwort für Ihre Fritzbox" >> $(CALLER)
-	@echo "#define SECRET_PASS \"$(SECRET_FPASS)\"" >> $(CALLER)
+	@echo "#define SECRET_FPASS \"$(SECRET_FPASS)\"" >> $(CALLER)
 	@echo "\n//Die IP-Adresse Ihrer Fritzbox. Ab Werk lautet diese 192.168.178.1." >> $(CALLER)
 	@echo "#define SECRET_IP \"$(SECRET_IP)\"" >> $(CALLER)	
 	
