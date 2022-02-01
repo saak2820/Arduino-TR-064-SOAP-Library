@@ -572,7 +572,7 @@ String TR064::byte2hex(byte number){
 */
 /**************************************************************************/
 bool TR064::xmlTakeParam(String (*params)[2], int nParam) {
-    WiFiClient * stream = &tr064client;    
+    WiFiClient * stream = &tr064client;
     stream->Stream::setTimeout(40);
     while(stream->connected()) {
         if(!http.connected()) {
