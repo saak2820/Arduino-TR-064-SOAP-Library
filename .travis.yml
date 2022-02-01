@@ -23,12 +23,7 @@ addons:
 env:
   global:
      - ARDUINO_IDE_VERSION="1.8.15"
-     - PRETTYNAME="Arduino TR-064 Library"
-     - SECRET_WIFI_SSID="WLANSID"
-     - SECRET_WIFI_PASSWORD="XXXXXXXXXXXXXXXXXXXXX"
-     - SECRET_FUSER="homechecker"
-     - SECRET_FPASS="this_shouldBEaDecentPassword!"
-     - SECRET_IP="192.168.178.1"
+     - PRETTYNAME="Arduino TR-064 Library"     
 # Optional, will default to "$TRAVIS_BUILD_DIR/Doxyfile"
 #    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
  
