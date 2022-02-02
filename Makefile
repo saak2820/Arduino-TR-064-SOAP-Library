@@ -1,25 +1,15 @@
 #!/bin/bash
 
 EXAMPLEFILE := arduino_secrets.h.example
-EXAMPLS_DIR := ./examples
-CALLER := $(EXAMPLS_DIR)/caller
-HOME := $(EXAMPLS_DIR)/home-indicator
+SUBDIRS := $(wildcard examples/*)
 
-all: home-indicator caller 
-.PHONY:  all
-
-caller:$(CALLER)
+all: $(SUBDIRS)
+$(SUBDIRS):
 	# If $(EXAMPLEFILE) exists, move it to arduino_secrets.h
-	@echo "Find in " $</$(EXAMPLEFILE)
-	@if [ -f $</$(EXAMPLEFILE) ]; then \
-		mv $</$(EXAMPLEFILE) $</arduino_secrets.h; \
+	@echo "Find " $@/$(EXAMPLEFILE)
+	@if [ -f $@/$(EXAMPLEFILE) ]; then \
+		mv $@/$(EXAMPLEFILE) $@/arduino_secrets.h; \
 	else echo "Not found"; \
 	fi
 
-home-indicator:$(HOME)
-	# If $(EXAMPLEFILE) exists, move it to arduino_secrets.h
-	@echo "Find in " $</$(EXAMPLEFILE)
-	@if [ -f $</$(EXAMPLEFILE) ]; then \
-		mv $</$(EXAMPLEFILE) $</arduino_secrets.h; \
-	else echo "Not found"; \
-	fi
+.PHONY: all $(SUBDIRS)
