@@ -13,4 +13,3 @@ jobs:
           compliance: strict
           # The type of project to check.
           project-type: library
-          

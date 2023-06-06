@@ -100,7 +100,8 @@ void setup() {
   //  DEBUG_WARNING      ///< Only print error and warning messages
   //  DEBUG_INFO         ///< Print error, warning and info messages
   //  DEBUG_VERBOSE      ///< Print all messages
-    connection.debug_level = connection.DEBUG_VERBOSE;
+  connection.debug_level = connection.DEBUG_WARNING;
+
   if(Serial) Serial.setDebugOutput(true);
   
   // The following line retrieves a list of all available services on the router.
@@ -134,7 +135,8 @@ void callWahlhilfe() {
   if(connection.state()<0){
     connection.init();
   }
-  String params[][2] = {{"NewX_AVM-DE_PhoneNumber", "**620"}};
+  String params[][2] = {{"NewX_AVM-DE_PhoneNumber", "**799"}};
+
   String req[][2] = {{}};
   connection.action("X_VoIP:1", "X_AVM-DE_DialNumber", params, 1, req, 0);
   //connection.action("urn:dslforum-org:service:X_VoIP:1", "X_AVM-DE_DialNumber", params, 1, req, 0);
