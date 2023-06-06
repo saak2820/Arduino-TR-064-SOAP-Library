@@ -48,7 +48,7 @@
 #if TR_PROTOCOL == 0
 	TR064 connection(TR_PORT, TR_IP, TR_USER, TR_PASS);
 #else
-	#if TRANSPORT_PROTOCOL == 1
+	#if TR_PROTOCOL == 1
 		Protocol protocol = Protocol::useHttpsInsec;
 	#else
 		Protocol protocol = Protocol::useHttps;
@@ -100,7 +100,8 @@ void setup() {
   //  DEBUG_WARNING      ///< Only print error and warning messages
   //  DEBUG_INFO         ///< Print error, warning and info messages
   //  DEBUG_VERBOSE      ///< Print all messages
-    connection.debug_level = connection.DEBUG_WARNING;
+  connection.debug_level = connection.DEBUG_WARNING;
+
   if(Serial) Serial.setDebugOutput(true);
   
   // The following line retrieves a list of all available services on the router.
@@ -135,6 +136,7 @@ void callWahlhilfe() {
     connection.init();
   }
   String params[][2] = {{"NewX_AVM-DE_PhoneNumber", "**799"}};
+
   String req[][2] = {{}};
   connection.action("X_VoIP:1", "X_AVM-DE_DialNumber", params, 1, req, 0);
   //connection.action("urn:dslforum-org:service:X_VoIP:1", "X_AVM-DE_DialNumber", params, 1, req, 0);
