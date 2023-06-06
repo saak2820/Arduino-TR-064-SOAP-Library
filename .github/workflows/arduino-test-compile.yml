@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: rename Secret File
-        run: make build
+        run: bash ${GITHUB_WORKSPACE}/scripts/renamesecrets.sh
       - name: Compile all examples using the bash script arduino-test-compile.sh
         env:
           # Passing parameters to the script by setting the appropriate ENV_* variables.
