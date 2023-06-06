@@ -136,7 +136,6 @@ void callWahlhilfe() {
     connection.init();
   }
   String params[][2] = {{"NewX_AVM-DE_PhoneNumber", "**799"}};
-
   String req[][2] = {{}};
   connection.action("X_VoIP:1", "X_AVM-DE_DialNumber", params, 1, req, 0);
   //connection.action("urn:dslforum-org:service:X_VoIP:1", "X_AVM-DE_DialNumber", params, 1, req, 0);
